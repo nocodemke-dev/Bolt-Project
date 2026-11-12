@@ -1,4 +1,5 @@
 export type Priority = "low" | "medium" | "high";
+export type TaskStatus = "todo" | "in_progress" | "done";
 
 export interface Task {
   id: string;
@@ -6,15 +7,8 @@ export interface Task {
   due_date: string | null;
   completed: boolean;
   priority: Priority;
-  created_at: string;
-}
-
-export interface TimeBlock {
-  id: string;
-  title: string;
-  block_date: string;
-  start_time: string;
-  end_time: string;
+  status: TaskStatus;
+  scheduled_time: string | null;
   created_at: string;
 }
 
